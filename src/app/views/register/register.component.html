@@ -58,6 +58,28 @@
                     placeholder="Confirmar senha"
                     >
                 </div>
+                <div class="input-group mb-4">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="icon-lock"></i></span>
+                  </div>
+                  <select
+                    class="form-control"
+                    id="state"
+                    formControlName="state"
+                    >
+                    <option value="" selected>Selecione</option>
+                    <option *ngFor="let estado of estados" [value]="estado.sigla">{{ estado.nome }}</option>
+                  </select>
+                </div>
+                <div class="input-group mb-4">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="icon-lock"></i></span>
+                  </div>
+                  <select class="form-control" id="cidade" formControlName="city">
+                    <option value="" selected *ngIf="formGroup.get('state').valid">Selecione</option>
+                    <option *ngFor="let cidade of cidades" [value]="cidade.nome">{{ cidade.nome }}</option>
+                  </select>
+                </div>
                 <button type="button" class="btn btn-block btn-success" (click)="createAccount()">Create Account</button>
               </form>
             </div>

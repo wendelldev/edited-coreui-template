@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,10 @@ export class UsersService {
   ) { }
 
   registerUser(user: any) {
-    return this.http.post('http://localhost:3000/users', user)
+    return this.http.post(environment.apiUrl + '/users', user)
+  }
+
+  getAllUser() {
+    return this.http.get(environment.apiUrl + '/users')
   }
 }

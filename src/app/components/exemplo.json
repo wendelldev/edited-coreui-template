@@ -1,0 +1,36 @@
+{
+    "graficoPizza": [
+        {
+            "id": "",
+            "name": 55,
+            "code": ""
+        },
+        {
+            "id": "",
+            "name": "",
+            "code": ""
+        },
+        {
+            "id": "",
+            "name": "",
+            "code": ""
+        }
+    ],
+    "graficoBarra": [
+        {
+            "data": [12, 12, 44],
+            "labels": "teste"
+        },
+        {
+            "data": [12, 12, 44],
+            "labels": "teste"
+        },
+        {
+            "data": [12, 12, 44],
+            "labels": "teste"
+        }
+    ],
+    "rpp": 10,
+    "page": 2,
+    "next_page_url": "https://url-api.com/teste"
+}

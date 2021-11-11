@@ -51,7 +51,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ChartJSRoutingModule } from './views/chartjs/chartjs-routing.module';
 import { ChartJSComponent } from './views/chartjs/chartjs.component';
 import { MatSortModule } from '@angular/material/sort';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { HttpClientModule } from '@angular/common/http';
+import { TableSrPaginationComponent } from './components/table-sr-pagination/table-sr-pagination.component';
+import { DndDirective } from './utils/directives/dnd.directive';
+import { MatIconModule } from '@angular/material/icon';
 
 const modules = [
   MatFormFieldModule,
@@ -61,7 +65,9 @@ const modules = [
   MatSortModule,
   ReactiveFormsModule,
   ChartJSRoutingModule,
-  ChartsModule
+  ChartsModule,
+  MatProgressBarModule,
+  MatIconModule
 ]
 
 @NgModule({
@@ -77,7 +83,6 @@ const modules = [
     PerfectScrollbarModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    ChartsModule,
     IconModule,
     HttpClientModule,
     IconSetModule.forRoot(),
@@ -91,7 +96,9 @@ const modules = [
     LoginComponent,
     RegisterComponent,
     UsersComponent,
-    ChartJSComponent
+    ChartJSComponent,
+    TableSrPaginationComponent,
+    DndDirective
   ],
   providers: [
     {
@@ -100,6 +107,9 @@ const modules = [
     },
     IconSetService,
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
+  exports: [
+    TableSrPaginationComponent
+  ]
 })
 export class AppModule { }
